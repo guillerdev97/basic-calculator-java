@@ -24,6 +24,16 @@ public class BasicCalculator {
                     System.out.println("The result of " + "'" + operator + "'" + " is " + result);
                 }
             }
+
+            System.out.println("Do you want to exit? - Write number '0' to exit and number '1' to another operation...");
+            int leaveCalculator = scanner.nextInt();
+            if(leaveCalculator == 0) {
+                System.out.println("Calculator stops...");
+                System.exit(0);
+            }
+            if(leaveCalculator == 1) {
+                System.out.println("Calculator starts...");
+            }
         }
     }
 
