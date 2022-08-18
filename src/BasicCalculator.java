@@ -18,9 +18,37 @@ public class BasicCalculator {
             System.out.println("Which operation do you want to execute ('+' '-' '*' '/') ?");
             char operator = scanner.next().charAt(0);
 
-            System.out.println(num1);
-            System.out.println(num2);
-            System.out.println(operator);
+            for (int index=0; index < operatorTypes.length; index++) {
+                if(operator == operatorTypes[index]) {
+                    double result = calculateOperation(operator, num1, num2);
+                    System.out.println("The result of " + "'" + operator + "'" + " is " + result);
+                }
+            }
         }
+    }
+
+    public static double calculateOperation(char operatorType, double firstNum, double secondNum) {
+        char operator = operatorType;
+        double result = 0;
+
+        switch(operator) {
+            case '+':
+                result = firstNum + secondNum;
+                break;
+
+            case '-':
+                result = firstNum - secondNum;
+                break;
+
+            case '*':
+                result = firstNum * secondNum;
+                break;
+
+            case '/':
+                result = firstNum / secondNum;
+                break;
+        }
+
+        return result;
     }
 }
